@@ -23,9 +23,7 @@
         <mapping class="skillbox.Student"></mapping>
         <mapping class="skillbox.Teacher"></mapping>
         <mapping class="skillbox.Subscription"></mapping>
-        <mapping class="skillbox.SubscriptionId"></mapping>
         <mapping class="skillbox.PurchaseList"></mapping>
-        <mapping class="skillbox.PurchaseListId"></mapping>
         <mapping class="skillbox.LinkedPurchaseList"></mapping>
 
 

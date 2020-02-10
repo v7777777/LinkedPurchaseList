@@ -1,6 +1,11 @@
 package skillbox;
 
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.Setter;
+
 import javax.persistence.*;
+import java.io.Serializable;
 import java.time.LocalDateTime;
 
 @Entity
@@ -38,6 +43,31 @@ public class PurchaseList {
   public void setPurchaseListId(PurchaseListId purchaseListId) {
     this.purchaseListId = purchaseListId;
   }
+
+  @EqualsAndHashCode
+  @Embeddable
+  public static class PurchaseListId implements Serializable {
+
+    @Getter
+    @Setter
+    @Column(name = "student_name")
+    private String studentName;
+
+    @Getter
+    @Setter
+    @Column(name = "course_name")
+    private String courseName;
+
+    private PurchaseListId() { }
+
+    public PurchaseListId(String studentName, String courseName) {
+      this.studentName = studentName;
+      this.courseName = courseName;
+    }
+
+
+  }
+
 
   public String getStudentName() {
     return studentName;

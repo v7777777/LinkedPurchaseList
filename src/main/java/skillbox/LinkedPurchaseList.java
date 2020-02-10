@@ -50,6 +50,7 @@ public class LinkedPurchaseList implements Serializable {
         @Getter
         @Setter
         Integer studentId;
+
         @Getter
         @Setter
         Integer courseId;
@@ -59,7 +60,7 @@ public class LinkedPurchaseList implements Serializable {
             this.courseId = courseId;
         }
 
-        public LinkedPurchaseListId() { }
+        private LinkedPurchaseListId() { }
 
 
 

@@ -1,5 +1,9 @@
 package skillbox;
 
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.Setter;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.time.LocalDateTime;
@@ -30,7 +34,31 @@ public class Subscription implements Serializable  {
     public Subscription(Student student, Course course) {
         this.student = student;
         this.course = course;
-        this.subscriptionId = new SubscriptionId(student.getId(), course.getId());
+        this.subscriptionId = new Subscription.SubscriptionId(student.getId(), course.getId());
+
+    }
+
+    @EqualsAndHashCode
+    @Embeddable
+    public static class SubscriptionId implements Serializable {
+
+        @Getter
+        @Setter
+        @Column(name = "student_id")
+        private Integer studentId;
+
+        @Getter
+        @Setter
+        @Column(name = "course_id")
+        private Integer courseId;
+
+        private SubscriptionId() { }
+
+        public SubscriptionId(Integer studentId, Integer courseId) {
+            this.studentId = studentId;
+            this.courseId = courseId;
+
+        }
 
     }
 

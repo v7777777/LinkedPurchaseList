@@ -50,8 +50,6 @@ public class Main {
 //
 
 
-
-
 //        System.out.println("Test Course");
 //
 //        Course course = session.get(Course.class, 3);
@@ -88,22 +86,20 @@ public class Main {
 //
 //        teacher.getCourses().forEach(c -> System.out.println(c.getName()));
 //
-//        System.out.println("Test Subscription");
-//
-//        SubscriptionId subscriptionId = new SubscriptionId (2, 11);
-//
-//        Subscription subscription =  session.get(Subscription.class, subscriptionId);
-//
-//        System.out.println(subscription.getCourse().getName() + " " + subscription.getStudent().getName() + " " + subscription.getSubscriptionDate());
-//
-//        System.out.println(subscription.getSubscriptionId().getStudentId() + " " + subscription.getSubscriptionId().getCourseId() + " " + subscription.getSubscriptionDate());
-//
-//        System.out.println("Test PurchaseList");
-//
-//        PurchaseListId purchaseListId = new PurchaseListId("Квасников Емельян", "Рекламная графика");
-//        PurchaseList purchaseList = session.get(PurchaseList.class, purchaseListId);
-//
-//        System.out.println(purchaseListId.getCourseName() + " " +  purchaseList.getPrice()  + " " +  purchaseList.getSubscriptionDate());
+        System.out.println("Test Subscription");
+
+        Subscription.SubscriptionId subscriptionId = new Subscription.SubscriptionId (2, 11);
+
+        Subscription subscription =  session.get(Subscription.class, subscriptionId);
+
+        System.out.println(subscription.getCourse().getName() + " " + subscription.getStudent().getName() + " " + subscription.getSubscriptionDate());
+
+        System.out.println("Test PurchaseList");
+
+        PurchaseList.PurchaseListId purchaseListId = new PurchaseList.PurchaseListId("Квасников Емельян", "Рекламная графика");
+        PurchaseList purchaseList = session.get(PurchaseList.class, purchaseListId);
+
+        System.out.println(purchaseList.getCourseName() + " " +  purchaseList.getPrice()  + " " +  purchaseList.getSubscriptionDate());
         sessionFactory.close();
 
     }
