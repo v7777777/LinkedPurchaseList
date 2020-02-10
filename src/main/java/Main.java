@@ -27,24 +27,30 @@ public class Main {
 
         transaction.commit();
 
-        LinkedPurchaseListId id = new LinkedPurchaseListId(1,2);
+        LinkedPurchaseList.LinkedPurchaseListId id = new LinkedPurchaseList.LinkedPurchaseListId(1,2);
 
         LinkedPurchaseList list = session.get(LinkedPurchaseList.class, id);
 
-        System.out.println("Подписка имя и id курса: " + list.getCourseName() + ", " + list.getCourseId() +
-                ", имя и id студента: " + list.getStudentName()+ ", " + list.getStudentId());
+        System.out.println(list.getStudent().getName() + " " + list.getCourse().getName());
+//
+//        System.out.println("Подписка имя и id курса: " + list.getCourseName() + ", " + list.getCourseId() +
+//                ", имя и id студента: " + list.getStudentName()+ ", " + list.getStudentId());
+//
+//        List<Student> students = list.getCourse().getStudents();
+//
+//        System.out.println("студенты  которые подписаны на курс " + list.getCourseName() + " с id " + list.getCourseId());
+//
+//        students.stream().map(c -> c.getName()).forEach(System.out::println);
+//
+//        List<Course> courses = list.getStudent().getCourses();
+//
+//        System.out.println("курсы на которые подписан студент " + list.getStudentName() + " с id " + list.getStudentId());
+//
+//        courses.stream().map(s -> s.getName()).forEach(System.out::println);
+//
 
-        List<Student> students = list.getCourse().getStudents();
 
-        System.out.println("студенты  которые подписаны на курс " + list.getCourseName() + " с id " + list.getCourseId());
 
-        students.stream().map(c -> c.getName()).forEach(System.out::println);
-
-        List<Course> courses = list.getStudent().getCourses();
-
-        System.out.println("курсы на которые подписан студент " + list.getStudentName() + " с id " + list.getStudentId());
-
-        courses.stream().map(s -> s.getName()).forEach(System.out::println);
 
 //        System.out.println("Test Course");
 //

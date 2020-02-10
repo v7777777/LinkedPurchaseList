@@ -27,7 +27,7 @@
         <mapping class="skillbox.PurchaseList"></mapping>
         <mapping class="skillbox.PurchaseListId"></mapping>
         <mapping class="skillbox.LinkedPurchaseList"></mapping>
-        <mapping class="skillbox.LinkedPurchaseListId"></mapping>
+
 
     </session-factory>
 </hibernate-configuration>

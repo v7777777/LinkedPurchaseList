@@ -1,12 +1,16 @@
 package skillbox;
 
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.Setter;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "LinkedPurchaseList")
-@IdClass(LinkedPurchaseListId.class)
+@IdClass(LinkedPurchaseList.LinkedPurchaseListId.class)
 public class LinkedPurchaseList implements Serializable {
 
     @Id
@@ -16,12 +20,6 @@ public class LinkedPurchaseList implements Serializable {
     @Id
     @Column(name = "course_id", columnDefinition = "int(10) unsigned", nullable = false)
     Integer courseId;
-
-    @Column(name = "course_name")
-    String courseName;
-
-    @Column(name = "student_name")
-    String studentName;
 
     @Column(name = "price", columnDefinition = "int(10) unsigned", nullable = false)
     Integer  price;
@@ -45,20 +43,26 @@ public class LinkedPurchaseList implements Serializable {
 
     }
 
-    public String getCourseName() {
-        return  course.getName();
-    }
+    @EqualsAndHashCode
+    @Embeddable
+    public static class LinkedPurchaseListId implements Serializable {
 
-    public void setCourseName(String name) {
-        course.setName(name);
-    }
+        @Getter
+        @Setter
+        Integer studentId;
+        @Getter
+        @Setter
+        Integer courseId;
 
-    public String getStudentName() {
-        return student.getName();
-    }
+        public LinkedPurchaseListId(Integer studentId, Integer courseId) {
+            this.studentId = studentId;
+            this.courseId = courseId;
+        }
 
-    public void setStudentName(String name) {
-        student.setName(name);
+        public LinkedPurchaseListId() { }
+
+
+
     }
 
     public int getCourseId() {

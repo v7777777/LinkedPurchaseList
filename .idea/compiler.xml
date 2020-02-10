@@ -6,10 +6,10 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="дз3 component id не получается" />
+        <module name="дз3" />
         <module name="hibernate" />
         <module name="дз3 все работает прим перч лист" />
-        <module name="дз3" />
+        <module name="дз3 component id не получается" />
         <module name="дз 4" />
       </profile>
     </annotationProcessing>
